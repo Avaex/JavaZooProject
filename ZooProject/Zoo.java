@@ -1,6 +1,9 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Zoo {
+
+    Scanner sc = new Scanner(System.in);
 
     ArrayList<Animal> animalTypes = new ArrayList<Animal>();
     ArrayList<Aardvark> aardvarks = new ArrayList<Aardvark>();
@@ -92,5 +95,47 @@ public class Zoo {
         turtles.add(squirt);
         turtles.add(crush);
         turtles.add(koopa);
+    }
+
+    public void tourAardvarks() {
+        System.out.println("Hello and welcome to the Aardvark exhibit!");
+        System.out.println();
+        System.out.println("Aardvark fact: Aardvarks live in many different types of" + 
+        " habitats, such as grasslands, savannas, rainforests, woodlands and thickets" + 
+        " throughout Africa in the areas south of the Sahara. ");
+        System.out.println("First, we would like to introduce you to each aardvark and" + 
+        "tell you about any unique characteristics for each animal");
+
+        if (aardvarks.isEmpty()) {
+            System.out.println("Something went wrong. No aardvark objects created. Exiting.");
+            System.exit(-1);
+        }
+
+        for (Aardvark a : aardvarks) {
+            System.out.println();
+            System.out.println("Name: " + a.getName());
+            System.out.println("Age: " + a.getAge());
+            System.out.println("Food preference: " + a.getFoodPreferenec());
+        }
+
+        while (true) {
+            System.out.println("How would you like to interact with the exhibit?");
+            System.out.println("1. Feed the aardvarks some food");
+            System.out.println("2. Attempt to talk to the aardvarks");
+            System.out.println("3. Leave this exhibit");
+
+            String userChoice = sc.nextLine();
+
+            if (userChoice.equals("1")) {
+
+            } else if (userChoice.equals("2")) {
+
+            } else if (userChoice.equals("3")) {
+                System.out.println("LEaving aardvark exhibit");
+                break;
+            } else {
+                System.out.println("Invalid choice. Please try again.");
+            }
+        }
     }
 }

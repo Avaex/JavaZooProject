@@ -10,6 +10,7 @@ public abstract class Animal {
 
   // Initial constructor
   public Animal(String species, String name, int age) {
+    setName(name);
     setSpecies(species);
     setHealth(health);
     setHunger(50);
@@ -49,8 +50,12 @@ public abstract class Animal {
   }
 
   public void setHunger(int level) {
-    // Add the new 
-    this.hungerLevel = level;
+
+    if (this.hungerLevel + level > 100) {
+      this.hungerLevel = 100;
+    } else {
+      this.hungerLevel += level;
+    }
   }
 
   public int getHungerLevel() {

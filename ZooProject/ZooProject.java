@@ -1,7 +1,12 @@
 import java.util.Scanner;
 
 public class ZooProject {
+
+  static Zoo zoo;
   public static void main(String args[]) {
+
+    zoo = new Zoo();
+
     System.out.println();
     System.out.println("Hello, and welcome to the zoo!");
     System.out.println("---------------------------------------------");
@@ -71,6 +76,8 @@ public class ZooProject {
     System.out.println("./  / /\\ \\   | \\ \\  \\ \\       /`--------'");
     System.out.println("   / /  \\ \\  | |\\ \\  \\7--- ooo ooo ooo ooo ooo ooo");
     System.out.println();
+
+    zoo.tourAardvarks();
 
   }
 
