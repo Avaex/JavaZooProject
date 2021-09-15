@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public abstract class Animal {
   
   private String name;
@@ -38,17 +40,17 @@ public abstract class Animal {
     return this.health;
   }
 
+  public void setHunger() {
+    // We set hunger level to a random number between 1 and 100
+    Random rand = new Random();
+    int randNum = 1 + rand.nextInt(100);
+
+    this.hungerLevel = randNum;
+  }
+
   public void setHunger(int level) {
     // Add the new 
-    this.hungerLevel += level;
-
-    if (this.hungerLevel > 100) {
-      this.hungerLevel = 100;
-    }
-
-    if (this.hungerLevel < 15) {
-      setHealth("bad");
-    }
+    this.hungerLevel = level;
   }
 
   public int getHungerLevel() {

@@ -72,10 +72,6 @@ public class ZooProject {
     System.out.println("   / /  \\ \\  | |\\ \\  \\7--- ooo ooo ooo ooo ooo ooo");
     System.out.println();
 
-    Aardvark perry = new Aardvark("Arthur", 2, "ants");
-    System.out.println("Aardvark name: " + perry.getName());
-    System.out.println("Age: " + perry.getAge());
-    perry.call();
   }
 
   public static void visitBats() {
@@ -88,10 +84,6 @@ public class ZooProject {
     System.out.println("`            \"   \"            `");
     System.out.println();
 
-    Bat batty = new Bat("Batty", 3);
-    System.out.println("Bat name: " + batty.getName());
-    System.out.println("Age: " + batty.getAge());
-    batty.call();
   }
 
   public static void visitBears() {

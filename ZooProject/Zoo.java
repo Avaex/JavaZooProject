@@ -65,10 +65,32 @@ public class Zoo {
     }
 
     public void createBearExhibit() {
-        
+        Bear smokey = new Bear("Bear", "Smokey", 35, "Black", "Brown");
+        Bear misha = new Bear("Bear", "Misha", 10, "Polar", "White");
+        Bear grizzly399 = new Bear("Bear", "Grizzly 399", 24, "Grizzly", "Brown");
+        Bear po = new Bear("Bear", "Po", 15, "Panda", "Black/White");
+
+        // Add one bear to the animalTypes list
+        animalTypes.add(smokey);
+
+        // Add all bears to the bears list
+        bears.add(smokey);
+        bears.add(misha);
+        bears.add(grizzly399);
+        bears.add(po);
     }
 
     public void createTurtleExhibit() {
-        
+        Turtle franklin = new Turtle("Turtle", "Franklin", 6, "small");
+        Turtle squirt = new Turtle("Turtle", "Squirt", 5, "small");
+        Turtle crush = new Turtle("Turtle", "Crush", 100, "large");
+        Turtle koopa = new Turtle("Turtle", "Koopa", 36, "medium");
+
+        animalTypes.add(franklin);
+
+        turtles.add(franklin);
+        turtles.add(squirt);
+        turtles.add(crush);
+        turtles.add(koopa);
     }
 }
