@@ -1,20 +1,24 @@
 public class Bear extends Animal {
 
-    private String species;
+    // Type determines what kind of bear this is, such as black bear,
+    // grizzly bear, polar bear, etc.
+    private String type;
+    // Color is simply the color of the bear
     private String color;
 
-    public Bear(String name, int age, String species, String color) {
-        super(name, age);
+    public Bear(String species, String name, int age, String type, String color) {
+        super(species, name, age);
         setSpecies(species);
         setColor(color);
+        setType(type);
     }
 
-    public void setSpecies(String species) {
-        this.species = species;
+    public void setType(String type) {
+        this.type = type;
     }
     
-    public String getSpecies() {
-        return this.species;
+    public String getType() {
+        return this.type;
     }
 
     public void setColor(String color) {

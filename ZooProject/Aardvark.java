@@ -1,9 +1,10 @@
 public class Aardvark extends Animal {
 
+  // Aardvarks like to eat either termites or ants
   private String foodPreference;
   
-  public Aardvark(String name, int age, String food) {
-    super(name, age);
+  public Aardvark(String species, String name, int age, String food) {
+    super(species, name, age);
     setFoodPreference(food);
   }
 
@@ -17,10 +18,5 @@ public class Aardvark extends Animal {
 
   public void call() {
     System.out.println("OOOOOoooooooOOOOOOOOoooooooOOOOOO");
-  }
-
-  public enum aardvarkFoods {
-    ants,
-    termites
   }
 }

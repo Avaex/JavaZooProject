@@ -2,14 +2,24 @@ public abstract class Animal {
   
   private String name;
   private String health;
+  private String species;
   private int hungerLevel;
   private int age;
 
   // Initial constructor
-  public Animal(String name, int age) {
+  public Animal(String species, String name, int age) {
+    setSpecies(species);
     setHealth(health);
     setHunger(50);
     setAge(age);
+  }
+
+  public void setSpecies(String species) {
+    this.species = species;
+  }
+
+  public String getSpecies() {
+    return this.species;
   }
 
   public void setName(String name) {

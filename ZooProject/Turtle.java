@@ -1,9 +1,11 @@
 public class Turtle extends Animal {
 
+    // A turtle's shellsize can either be small, average, or big
     private String shellSize;
 
-    public Turtle(String name, int age, String shellSize) {
-        super(name, age);
+    public Turtle(String species, String name, int age, String shellSize) {
+        super(species, name, age);
+        setShellSize(shellSize);
     }
 
     public void setShellSize(String shellSize) {
