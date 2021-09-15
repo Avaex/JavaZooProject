@@ -1,31 +1,26 @@
 public class Aardvark extends Animal {
 
-  private String name;
-  private String foodType;
+  private String foodPreference;
   
   public Aardvark(String name, int age, String food) {
-    super(age);
-    this.setName(name);
-    this.setFoodType(food);
+    super(name, age);
+    setFoodPreference(food);
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setFoodPreference(String food) {
+    this.foodPreference = food;
   }
 
-  public String getName() {
-    return this.name;
-  }
-
-  public void setFoodType(String foodType) {
-    this.foodType = foodType;
-  }
-
-  public String getFoodType() {
-    return this.foodType;
+  public String getFoodPreferenec() {
+    return this.foodPreference;
   }
 
   public void call() {
     System.out.println("OOOOOoooooooOOOOOOOOoooooooOOOOOO");
+  }
+
+  public enum aardvarkFoods {
+    ants,
+    termites
   }
 }

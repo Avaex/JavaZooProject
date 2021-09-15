@@ -21,6 +21,7 @@ public class ZooProject {
       System.out.println("1. Aardvarks");
       System.out.println("2. Bats");
       System.out.println("3. Bears");
+      System.out.println("4. Turtles");
 
       String exhibitChoice = sc.nextLine();
       int exhibitChoiceInt = Integer.parseInt(exhibitChoice);
@@ -54,6 +55,10 @@ public class ZooProject {
       visitBats();
     } else if (exhibitNum == 3) {
       System.out.println("Going to the bear exhibit!");
+      visitBears();
+    } else if (exhibitNum == 4) {
+      System.out.println("Going to the turtle exhibit!");
+      visitTurtles();
     }
   }
 
@@ -65,7 +70,6 @@ public class ZooProject {
     System.out.println(" /./\\  )______   \\__ \\        ( help us! )");
     System.out.println("./  / /\\ \\   | \\ \\  \\ \\       /`--------'");
     System.out.println("   / /  \\ \\  | |\\ \\  \\7--- ooo ooo ooo ooo ooo ooo");
-    System.out.println();
     System.out.println();
 
     Aardvark perry = new Aardvark("Arthur", 2, "ants");
@@ -79,16 +83,34 @@ public class ZooProject {
     System.out.println("    / \\'._   (\\_/)   _.'/ \\");
     System.out.println("   / .''._'--(o.o)--'_.''. \\");
     System.out.println("  /.' _/ |`'=/ \" \\='`| \\_ `.\\");
-    //System.out.println(" /` .' `\\;-,'\\___/',-;/` '. '\\");
     System.out.println(" /` .' `\\;-,'\\___/',-;/` '. '\\");
     System.out.println("/.-'       `\\(-V-)/`       `-.\\");
     System.out.println("`            \"   \"            `");
-    System.out.println();
     System.out.println();
 
     Bat batty = new Bat("Batty", 3);
     System.out.println("Bat name: " + batty.getName());
     System.out.println("Age: " + batty.getAge());
     batty.call();
+  }
+
+  public static void visitBears() {
+    System.out.println(" __         __");
+    System.out.println("/  \\.-\"\"\"-./  \\");
+    System.out.println("\\    -   -    /");
+    System.out.println(" |   o   o   |");
+    System.out.println(" \\  .-'''-.  /");
+    System.out.println("  '-\\__Y__/-'");
+    System.out.println("     `---`");
+  }
+
+  public static void visitTurtles() {
+    System.out.println("                    __");
+    System.out.println("         .,-;-;-,. /'_\\");
+    System.out.println("       _/_/_/_|_\\_\\) /");
+    System.out.println("     '-<_><_><_><_>=/\\");
+    System.out.println("       `/_/====/_/-'\\_\\");
+    System.out.println("        \"\"     \"\"    \"\"");
+    System.out.println("");
   }
 }
