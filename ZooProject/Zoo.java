@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Zoo {
 
     Scanner sc = new Scanner(System.in);
+    Random rand = new Random();
 
     ArrayList<Animal> animalTypes = new ArrayList<Animal>();
     ArrayList<Aardvark> aardvarks = new ArrayList<Aardvark>();
@@ -129,9 +131,11 @@ public class Zoo {
             if (userChoice.equals("1")) {
 
             } else if (userChoice.equals("2")) {
+                // Loop through all animals in this exhibit and give 10% chance each animal understands
 
+                
             } else if (userChoice.equals("3")) {
-                System.out.println("LEaving aardvark exhibit");
+                System.out.println("Leaving aardvark exhibit");
                 break;
             } else {
                 System.out.println("Invalid choice. Please try again.");
