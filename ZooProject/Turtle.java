@@ -16,7 +16,7 @@ public class Turtle extends Animal {
         return this.shellSize;
     }
     
-    public void call() {
-        System.out.println("*hsssss *hsssss");
+    public String call() {
+        return "*hsssss *hsssss";
     }
 }

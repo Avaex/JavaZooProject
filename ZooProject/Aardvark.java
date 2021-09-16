@@ -16,7 +16,7 @@ public class Aardvark extends Animal {
     return this.foodPreference;
   }
 
-  public void call() {
-    System.out.println("OOOOOoooooooOOOOOOOOoooooooOOOOOO");
+  public String call() {
+    return "OOOOOoooooooOOOOOOOOoooooooOOOOOO";
   }
 }

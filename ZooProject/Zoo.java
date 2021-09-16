@@ -102,40 +102,307 @@ public class Zoo {
     public void tourAardvarks() {
         System.out.println("Hello and welcome to the Aardvark exhibit!");
         System.out.println();
-        System.out.println("Aardvark fact: Aardvarks live in many different types of" + 
-        " habitats, such as grasslands, savannas, rainforests, woodlands and thickets" + 
-        " throughout Africa in the areas south of the Sahara. ");
-        System.out.println("First, we would like to introduce you to each aardvark and" + 
-        "tell you about any unique characteristics for each animal");
 
         if (aardvarks.isEmpty()) {
             System.out.println("Something went wrong. No aardvark objects created. Exiting.");
             System.exit(-1);
         }
 
-        for (Aardvark a : aardvarks) {
-            System.out.println();
-            System.out.println("Name: " + a.getName());
-            System.out.println("Age: " + a.getAge());
-            System.out.println("Food preference: " + a.getFoodPreferenec());
-        }
-
         while (true) {
+            System.out.println();
             System.out.println("How would you like to interact with the exhibit?");
-            System.out.println("1. Feed the aardvarks some food");
-            System.out.println("2. Attempt to talk to the aardvarks");
-            System.out.println("3. Leave this exhibit");
+            System.out.println("1. Meet the animals");
+            System.out.println("2. Feed the aardvarks some food");
+            System.out.println("3. Attempt to talk to the aardvarks");
+            System.out.println("4. Hear an aardvark fact");
+            System.out.println("5. Leave this exhibit");
 
             String userChoice = sc.nextLine();
 
             if (userChoice.equals("1")) {
+                System.out.println("Let's meet the aardvarks!");
+                for (Aardvark a : aardvarks) {
+                    System.out.println();
+                    System.out.println("Name: " + a.getName());
+                    System.out.println("Age: " + a.getAge());
+                    System.out.println("Food preference: " + a.getFoodPreferenec());
+                }
 
             } else if (userChoice.equals("2")) {
-                // Loop through all animals in this exhibit and give 10% chance each animal understands
+                // Loop through all animals in the exhibit and give a random type of food to each
+                // If the animal prefers another type of food, skip that animal and go to the next
+                System.out.println("Let's feed the aardvarks!");
 
-                
-            } else if (userChoice.equals("3")) {
+                int foodChoice = 1 + rand.nextInt(2);
+                if (foodChoice == 1) {
+                    System.out.println("Feeding the aardvarks ants!");
+                } else {
+                    System.out.println("Feeding the aardvarks termites!");
+                }
+                for (Aardvark a : aardvarks) {
+                    System.out.println();
+                    // Food choice is ants, check to see if this aardvark likes ants
+                    if (foodChoice == 1) {
+                        if (a.getFoodPreferenec().equals("ants")) {
+                            System.out.println(a.getName() + " likes the ants!");
+                            a.setHunger(15);
+                        } else {
+                            System.out.println(a.getName() + " does not like ants!");
+                        }
+                    } else if (foodChoice == 2) {
+                        if (a.getFoodPreferenec().equals("termites")) {
+                            System.out.println(a.getName() + " likes termites!");
+                            a.setHunger(15);
+                        } else {
+                            System.out.println(a.getName() + " does not like termites!");
+                        }
+                    }
+                }
+
+            } else if (userChoice.equals("3")) {   
+                System.out.println("Let's talk to the aardvarks!");
+
+                for (Aardvark a : aardvarks) {
+                    int randNum = 1 + rand.nextInt(10);
+                    System.out.println();
+
+                    if (randNum == 1) {
+                        System.out.println("You attempt to speak with " + a.getName());
+                        System.out.println("They speak back!");
+                        System.out.println(a.getName() + " says " + a.call());
+                    } else {
+                        System.out.println("You attempt to speak with " + a.getName());
+                        System.out.println("It didn't work...");
+                    }
+                }
+            } else if (userChoice.equals("4")) {
+                System.out.println("Aardvark facts: ");
+                System.out.println();
+                int randNum = 1 + rand.nextInt(3);
+                if (randNum == 1) {
+                    System.out.println("Aardvarks are solitary animals and only come together to mate.");
+                } else if (randNum == 2) {
+                    System.out.println("Aardvarks are nocturnal which means they sleep during the day.");
+                } else if (randNum == 3) {
+                    System.out.println("Aardvarks are also called ant bears");
+                } else {
+                    System.out.println("Aardvarks have four toes on the front feet and five toes on their back feet.");
+                }
+            } else if (userChoice.equals("5")) {
                 System.out.println("Leaving aardvark exhibit");
+                break;
+            } else {
+                System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    } 
+    
+    public void tourBats() {
+
+        System.out.println("Hello and welcome to the bat exhibit!");
+        System.out.println();
+
+        if (bats.isEmpty()) {
+            System.out.println("Error: no bats in exhibit. Please try again.");
+            System.exit(-1);
+        }
+
+        while (true) {
+            System.out.println();
+            System.out.println("How would you like to interact with the exhibit?");
+            System.out.println("1. Meet the bats");
+            System.out.println("2. Attempt to talk to the bats");
+            System.out.println("3. Hear a bat fact");
+            System.out.println("4. Leave this exhibit");
+
+            String userChoice = sc.nextLine();
+
+            if (userChoice.equals("1")) {
+                System.out.println("Let's meet the bats!");
+                System.out.println("First, let's look at bat box 1: ");
+                for (Bat b : bats) {
+                    if (b.getBatBoxNum() == 1) {
+                        System.out.println("Name: " + b.getName());
+                        System.out.println("Age: " + b.getAge());
+                    }
+                }
+
+                System.out.println();
+                System.out.println("Now let's look at bat box 2");
+                for (Bat b : bats) {
+                    if (b.getBatBoxNum() == 2) {
+                        System.out.println("Name: " + b.getName());
+                        System.out.println("Age: " + b.getAge());
+                    }
+                }
+
+            } else if (userChoice.equals("2")) {
+                System.out.println("Let's talk to the bats!");
+
+                for (Bat b : bats) {
+                    int randNum = 1 + rand.nextInt(10);
+                    System.out.println();
+
+                    if (randNum == 1) {
+                        System.out.println("You attempt to speak with " + b.getName());
+                        System.out.println("They speak back!");
+                        System.out.println(b.getName() + " says " + b.call());
+                    } else {
+                        System.out.println("You attempt to speak with " + b.getName());
+                        System.out.println("It didn't work...");
+                    }
+                }
+            } else if (userChoice.equals("3")) {
+                System.out.println("Bat facts: ");
+                System.out.println();
+                int randNum = 1 + rand.nextInt(3);
+                
+                if (randNum == 1) {
+                    System.out.println("Bats can live more than 30 years and can fly at speeds of 60 miles per hour (or more!).");
+                } else if (randNum == 2) {
+                    System.out.println("Bats can eat up to 1,200 mosquitoes an hour.");
+                } else {
+                    System.out.println("More than half of the bat species in the United States are in severe decline or listed as endangered.");
+                }
+            } else if (userChoice.equals("4")) {
+                System.out.println("Exiting exhibit");
+                break;
+            } else {
+                System.out.println("Invalid choice, please try again");
+            }
+        }
+    }
+
+    public void tourBears() {
+
+        System.out.println("Welcome to the bear exhibit!");
+        System.out.println();
+
+        if (bears.isEmpty()) {
+            System.out.println("Error: no bears in exhibit. Exiting.");
+            System.exit(-1);
+        }
+
+        while (true) {
+            System.out.println();
+            System.out.println("How would you like to interact with the exhibit?");
+            System.out.println("1. Meet the bears");
+            System.out.println("2. Attempt to talk to the bears");
+            System.out.println("3. Hear a bear fact");
+            System.out.println("4. Leave the exhibit");
+
+            String userChoice = sc.nextLine();
+
+            if (userChoice.equals("1")) {
+                System.out.println("Let's meet the bears!");
+                for (Bear b : bears) {
+                    System.out.println("Name: " + b.getName());
+                    System.out.println("Age: " + b.getAge());
+                    System.out.println("Type: " + b.getType());
+                    System.out.println("Color: " + b.getColor());
+                }
+            } else if (userChoice.equals("2")) {
+                System.out.println("Let's talk to the bears!");
+
+                for (Bear b : bears) {
+                    int randNum = 1 + rand.nextInt(10);
+                    System.out.println();
+
+                    if (randNum == 1) {
+                        System.out.println("You attempt to speak with " + b.getName());
+                        System.out.println("They speak back!");
+                        System.out.println(b.getName() + " says " + b.call());
+                    } else {
+                        System.out.println("You attempt to speak with " + b.getName());
+                        System.out.println("It didn't work...");
+                    }
+                }
+
+            } else if (userChoice.equals("3")) {
+                System.out.println("Bear facts: ");
+                System.out.println();
+                int randNum = 1 + rand.nextInt(2);
+
+                if (randNum == 1) {
+                    System.out.println("Unlike many mammals, bears can see in color.");
+                } else if (randNum == 2) {
+                    System.out.println("A swimming polar bear can jump 8 ft. (2.4 m) out of the water to surprise a seal.");
+                } else {
+                    System.out.println("Bears have non-retractable claws like dogs and unlike cats.");
+                }
+            } else if (userChoice.equals("4")) {
+                System.out.println("Leaving the exhibit");
+                break;
+            } else {
+                System.out.println("Invalid choice, try again.");
+            }
+        }
+    }
+
+    public void tourTurtles() {
+
+        System.out.println("Welcome to the turtle exhibit!");
+        System.out.println();
+
+        if (turtles.isEmpty()) {
+            System.out.println("Error. No turtles in the exhibit. Exiting.");
+            System.exit(-1);
+        }
+
+        while (true) {
+            
+            System.out.println();
+            System.out.println("How would you like to interact with the exhibit?");
+            System.out.println("1. Meet the turtles");
+            System.out.println("2. Attempt to talk to the turtles");
+            System.out.println("3. Hear a turtle fact");
+            System.out.println("4. Leave the exhibit");
+
+            String userChoice = sc.nextLine();
+
+            if (userChoice.equals("1")) {
+                System.out.println("Let's meet the turtles!");
+                for (Turtle t : turtles) {
+                    System.out.println("Name: " + t.getName());
+                    System.out.println("Age: " + t.getAge());
+                    System.out.println("Shell size: " + t.getShellSize());
+                }
+            } else if (userChoice.equals("2")) {
+
+                System.out.println("Let's talk to the turtles!");
+
+                for (Turtle t : turtles) {
+                    int randNum = 1 + rand.nextInt(10);
+                    System.out.println();
+
+                    if (randNum == 1) {
+                        System.out.println("You attempt to speak with " + t.getName());
+                        System.out.println("They speak back!");
+                        System.out.println(t.getName() + " says " + t.call());
+                    } else {
+                        System.out.println("You attempt to speak with " + t.getName());
+                        System.out.println("It didn't work...");
+                    }
+                }
+
+            } else if (userChoice.equals("3")) {
+                System.out.println("Turtle facts: ");
+                System.out.println();
+
+                int randNum = 1 + rand.nextInt(2);
+
+                if (randNum == 1) {
+                    System.out.println("Sea turtles lay their eggs in a nest they dig in the sand with their" +  
+                    " rear flippers. The group of eggs is called a clutch.");
+                } else if (randNum == 2) {
+                    System.out.println("Sea turtles don’t retract into their shells.");
+                } else {
+                    System.out.println("Just like your bones, a turtle’s shell is actually part of its skeleton." +  
+                    " It’s made up of over 50 bones which include the turtle’s rib cage and spine.");
+                }
+
+            } else if (userChoice.equals("4")) {
+                System.out.println("Leaving the exhibit");
                 break;
             } else {
                 System.out.println("Invalid choice. Please try again.");

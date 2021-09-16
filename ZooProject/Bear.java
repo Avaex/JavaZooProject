@@ -29,7 +29,7 @@ public class Bear extends Animal {
         return this.color;
     }
 
-    public void call() {
-        System.out.println("*grrr *ROOOOOOOAR");
+    public String call() {
+        return "*grrr *ROOOOOOOAR";
     }
 }

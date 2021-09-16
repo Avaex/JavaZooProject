@@ -3,7 +3,6 @@ import java.util.Random;
 public abstract class Animal {
   
   private String name;
-  private String health;
   private String species;
   private int hungerLevel;
   private int age;
@@ -12,8 +11,7 @@ public abstract class Animal {
   public Animal(String species, String name, int age) {
     setName(name);
     setSpecies(species);
-    setHealth(health);
-    setHunger(50);
+    setHunger();
     setAge(age);
   }
 
@@ -33,14 +31,6 @@ public abstract class Animal {
     return this.name;
   }
 
-  public void setHealth(String s) {
-    this.health = s;
-  }
-
-  public String getHealth() {
-    return this.health;
-  }
-
   public void setHunger() {
     // We set hunger level to a random number between 1 and 100
     Random rand = new Random();
@@ -52,6 +42,7 @@ public abstract class Animal {
   public void setHunger(int level) {
 
     if (this.hungerLevel + level > 100) {
+      System.out.println(this.getName() + " is feeling full!");
       this.hungerLevel = 100;
     } else {
       this.hungerLevel += level;
@@ -70,5 +61,5 @@ public abstract class Animal {
     return this.age;
   }
 
-  public abstract void call();
+  public abstract String call();
 }

@@ -45,6 +45,12 @@ public class ZooProject {
     System.out.println();
     System.out.println("---------------------------------------------");
     System.out.println("Welcome to the guided tour for the zoo!");
+    System.out.println("We will be visiting all exhibits in alphebetcal order. Let's go!");
+
+    visitAardvarks();
+    visitBats();
+    visitBears();
+    visitTurtles();
   }
 
   public static void visitExhibit(int exhibitNum) {
@@ -78,7 +84,6 @@ public class ZooProject {
     System.out.println();
 
     zoo.tourAardvarks();
-
   }
 
   public static void visitBats() {
@@ -91,6 +96,7 @@ public class ZooProject {
     System.out.println("`            \"   \"            `");
     System.out.println();
 
+    zoo.tourBats();
   }
 
   public static void visitBears() {
@@ -101,6 +107,8 @@ public class ZooProject {
     System.out.println(" \\  .-'''-.  /");
     System.out.println("  '-\\__Y__/-'");
     System.out.println("     `---`");
+
+    zoo.tourBears();
   }
 
   public static void visitTurtles() {
@@ -111,5 +119,7 @@ public class ZooProject {
     System.out.println("       `/_/====/_/-'\\_\\");
     System.out.println("        \"\"     \"\"    \"\"");
     System.out.println("");
+
+    zoo.tourTurtles();
   }
 }

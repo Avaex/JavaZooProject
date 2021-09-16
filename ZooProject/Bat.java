@@ -16,7 +16,7 @@ public class Bat extends Animal {
     return this.batBoxNum;
   }
 
-  public void call() {
-    System.out.println("*click *click *click *click");
+  public String call() {
+    return "*click *click *click *click";
   }
 }
