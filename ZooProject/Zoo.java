@@ -100,6 +100,7 @@ public class Zoo {
     }
 
     public void tourAardvarks() {
+        
         System.out.println("Hello and welcome to the Aardvark exhibit!");
         System.out.println();
 
@@ -317,6 +318,7 @@ public class Zoo {
     }
 
     public void meetAnimals(int exhibitNum) {
+
         if (exhibitNum == 1) { // exhibitNum == 1 is for aardvarks
             System.out.println("Let's meet the aardvarks!");
             for (Aardvark a : aardvarks) {
@@ -364,6 +366,7 @@ public class Zoo {
     }
 
     public void talkAnimals(int exhibitNum) {
+
         if (exhibitNum == 1) {
             System.out.println("Let's talk to the aardvarks!");
 
