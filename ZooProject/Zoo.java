@@ -120,14 +120,7 @@ public class Zoo {
             String userChoice = sc.nextLine();
 
             if (userChoice.equals("1")) {
-                System.out.println("Let's meet the aardvarks!");
-                for (Aardvark a : aardvarks) {
-                    System.out.println();
-                    System.out.println("Name: " + a.getName());
-                    System.out.println("Age: " + a.getAge());
-                    System.out.println("Food preference: " + a.getFoodPreferenec());
-                }
-
+                meetAnimals(1);
             } else if (userChoice.equals("2")) {
                 // Loop through all animals in the exhibit and give a random type of food to each
                 // If the animal prefers another type of food, skip that animal and go to the next
@@ -160,21 +153,7 @@ public class Zoo {
                 }
 
             } else if (userChoice.equals("3")) {   
-                System.out.println("Let's talk to the aardvarks!");
-
-                for (Aardvark a : aardvarks) {
-                    int randNum = 1 + rand.nextInt(10);
-                    System.out.println();
-
-                    if (randNum == 1) {
-                        System.out.println("You attempt to speak with " + a.getName());
-                        System.out.println("They speak back!");
-                        System.out.println(a.getName() + " says " + a.call());
-                    } else {
-                        System.out.println("You attempt to speak with " + a.getName());
-                        System.out.println("It didn't work...");
-                    }
-                }
+                talkAnimals(1);
             } else if (userChoice.equals("4")) {
                 System.out.println("Aardvark facts: ");
                 System.out.println();
@@ -217,41 +196,10 @@ public class Zoo {
 
             String userChoice = sc.nextLine();
 
-            if (userChoice.equals("1")) {
-                System.out.println("Let's meet the bats!");
-                System.out.println("First, let's look at bat box 1: ");
-                for (Bat b : bats) {
-                    if (b.getBatBoxNum() == 1) {
-                        System.out.println("Name: " + b.getName());
-                        System.out.println("Age: " + b.getAge());
-                    }
-                }
-
-                System.out.println();
-                System.out.println("Now let's look at bat box 2");
-                for (Bat b : bats) {
-                    if (b.getBatBoxNum() == 2) {
-                        System.out.println("Name: " + b.getName());
-                        System.out.println("Age: " + b.getAge());
-                    }
-                }
-
+            if (userChoice.equals("1")) {  
+                meetAnimals(2);
             } else if (userChoice.equals("2")) {
-                System.out.println("Let's talk to the bats!");
-
-                for (Bat b : bats) {
-                    int randNum = 1 + rand.nextInt(10);
-                    System.out.println();
-
-                    if (randNum == 1) {
-                        System.out.println("You attempt to speak with " + b.getName());
-                        System.out.println("They speak back!");
-                        System.out.println(b.getName() + " says " + b.call());
-                    } else {
-                        System.out.println("You attempt to speak with " + b.getName());
-                        System.out.println("It didn't work...");
-                    }
-                }
+                talkAnimals(2);
             } else if (userChoice.equals("3")) {
                 System.out.println("Bat facts: ");
                 System.out.println();
@@ -294,30 +242,9 @@ public class Zoo {
             String userChoice = sc.nextLine();
 
             if (userChoice.equals("1")) {
-                System.out.println("Let's meet the bears!");
-                for (Bear b : bears) {
-                    System.out.println("Name: " + b.getName());
-                    System.out.println("Age: " + b.getAge());
-                    System.out.println("Type: " + b.getType());
-                    System.out.println("Color: " + b.getColor());
-                }
+                meetAnimals(3);
             } else if (userChoice.equals("2")) {
-                System.out.println("Let's talk to the bears!");
-
-                for (Bear b : bears) {
-                    int randNum = 1 + rand.nextInt(10);
-                    System.out.println();
-
-                    if (randNum == 1) {
-                        System.out.println("You attempt to speak with " + b.getName());
-                        System.out.println("They speak back!");
-                        System.out.println(b.getName() + " says " + b.call());
-                    } else {
-                        System.out.println("You attempt to speak with " + b.getName());
-                        System.out.println("It didn't work...");
-                    }
-                }
-
+                talkAnimals(3);
             } else if (userChoice.equals("3")) {
                 System.out.println("Bear facts: ");
                 System.out.println();
@@ -361,30 +288,9 @@ public class Zoo {
             String userChoice = sc.nextLine();
 
             if (userChoice.equals("1")) {
-                System.out.println("Let's meet the turtles!");
-                for (Turtle t : turtles) {
-                    System.out.println("Name: " + t.getName());
-                    System.out.println("Age: " + t.getAge());
-                    System.out.println("Shell size: " + t.getShellSize());
-                }
+                meetAnimals(4);
             } else if (userChoice.equals("2")) {
-
-                System.out.println("Let's talk to the turtles!");
-
-                for (Turtle t : turtles) {
-                    int randNum = 1 + rand.nextInt(10);
-                    System.out.println();
-
-                    if (randNum == 1) {
-                        System.out.println("You attempt to speak with " + t.getName());
-                        System.out.println("They speak back!");
-                        System.out.println(t.getName() + " says " + t.call());
-                    } else {
-                        System.out.println("You attempt to speak with " + t.getName());
-                        System.out.println("It didn't work...");
-                    }
-                }
-
+                talkAnimals(4);
             } else if (userChoice.equals("3")) {
                 System.out.println("Turtle facts: ");
                 System.out.println();
@@ -407,6 +313,123 @@ public class Zoo {
             } else {
                 System.out.println("Invalid choice. Please try again.");
             }
+        }
+    }
+
+    public void meetAnimals(int exhibitNum) {
+        if (exhibitNum == 1) { // exhibitNum == 1 is for aardvarks
+            System.out.println("Let's meet the aardvarks!");
+            for (Aardvark a : aardvarks) {
+                System.out.println();
+                System.out.println("Name: " + a.getName());
+                System.out.println("Age: " + a.getAge());
+                System.out.println("Food preference: " + a.getFoodPreferenec());
+            }
+        } else if (exhibitNum == 2) { // exhibitNum == 2 is for bats
+            System.out.println("Let's meet the bats!");
+            System.out.println("First, let's look at bat box 1: ");
+            for (Bat b : bats) {
+                if (b.getBatBoxNum() == 1) {
+                    System.out.println("Name: " + b.getName());
+                    System.out.println("Age: " + b.getAge());
+                }
+            }
+
+            System.out.println();
+            System.out.println("Now let's look at bat box 2");
+            for (Bat b : bats) {
+                if (b.getBatBoxNum() == 2) {
+                    System.out.println("Name: " + b.getName());
+                    System.out.println("Age: " + b.getAge());
+                }
+            }
+        } else if (exhibitNum == 3) { // exhibitNum == 3 is for bears
+            System.out.println("Let's meet the bears!");
+            for (Bear b : bears) {
+                System.out.println("Name: " + b.getName());
+                System.out.println("Age: " + b.getAge());
+                System.out.println("Type: " + b.getType());
+                System.out.println("Color: " + b.getColor());
+            }
+        } else if (exhibitNum == 4) { // exhibitNum == 4 is for turtles
+            System.out.println("Let's meet the turtles!");
+            for (Turtle t : turtles) {
+                System.out.println("Name: " + t.getName());
+                System.out.println("Age: " + t.getAge());
+                System.out.println("Shell size: " + t.getShellSize());
+            }
+        } else {
+            System.out.println("Error specifying exhibit to meet. Try again");
+        }
+    }
+
+    public void talkAnimals(int exhibitNum) {
+        if (exhibitNum == 1) {
+            System.out.println("Let's talk to the aardvarks!");
+
+            for (Aardvark a : aardvarks) {
+                int randNum = 1 + rand.nextInt(10);
+                System.out.println();
+
+                if (randNum == 1) {
+                    System.out.println("You attempt to speak with " + a.getName());
+                    System.out.println("They speak back!");
+                    System.out.println(a.getName() + " says " + a.call());
+                } else {
+                    System.out.println("You attempt to speak with " + a.getName());
+                    System.out.println("It didn't work...");
+                }
+            }
+        } else if (exhibitNum == 2) {
+            System.out.println("Let's talk to the bats!");
+
+            for (Bat b : bats) {
+                int randNum = 1 + rand.nextInt(10);
+                System.out.println();
+
+                if (randNum == 1) {
+                    System.out.println("You attempt to speak with bat " + b.getName());
+                    System.out.println("They speak back!");
+                    System.out.println(b.getName() + " says " + b.call());
+                } else {
+                    System.out.println("You attempt to speak with bat " + b.getName());
+                    System.out.println("It didn't work...");
+                }
+            }
+        } else if (exhibitNum == 3) {
+            System.out.println("Let's talk to the bears!");
+
+            for (Bear b : bears) {
+                int randNum = 1 + rand.nextInt(10);
+                System.out.println();
+
+                if (randNum == 1) {
+                    System.out.println("You attempt to speak with bear " + b.getName());
+                    System.out.println("They speak back!");
+                    System.out.println(b.getName() + " says " + b.call());
+                } else {
+                    System.out.println("You attempt to speak with bear " + b.getName());
+                    System.out.println("It didn't work...");
+                }
+            }
+        } else if (exhibitNum == 4) {
+            System.out.println("Let's talk to the turtles!");
+
+            for (Turtle t : turtles) {
+                int randNum = 1 + rand.nextInt(10);
+                System.out.println();
+
+                if (randNum == 1) {
+                    System.out.println("You attempt to speak with turtle " + t.getName());
+                    System.out.println("They speak back!");
+                    System.out.println(t.getName() + " says " + t.call());
+                } else {
+                    System.out.println("You attempt to speak with turtle " + t.getName());
+                    System.out.println("It didn't work...");
+                }
+            }
+        } else {
+            System.out.println("Error attempting to talk to animals.");
         }
     }
 }
