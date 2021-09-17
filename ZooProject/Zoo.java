@@ -372,11 +372,11 @@ public class Zoo {
                 System.out.println();
 
                 if (randNum == 1) {
-                    System.out.println("You attempt to speak with " + a.getName());
+                    System.out.println("You attempt to speak with aardvark " + a.getName());
                     System.out.println("They speak back!");
                     System.out.println(a.getName() + " says " + a.call());
                 } else {
-                    System.out.println("You attempt to speak with " + a.getName());
+                    System.out.println("You attempt to speak with aardvark " + a.getName());
                     System.out.println("It didn't work...");
                 }
             }

@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class ZooProject {
 
   static Zoo zoo;
+  
   public static void main(String args[]) {
 
     zoo = new Zoo();
