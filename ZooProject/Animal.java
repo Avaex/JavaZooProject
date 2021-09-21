@@ -11,7 +11,7 @@ public abstract class Animal {
   public Animal(String species, String name, int age) {
     setName(name);
     setSpecies(species);
-    setHunger();
+    setHungerLevel();
     setAge(age);
   }
 
@@ -31,16 +31,17 @@ public abstract class Animal {
     return this.name;
   }
 
-  public void setHunger() {
-    // We set hunger level to a random number between 1 and 100
+  // Sets the initial hunger level to a random number between 1 and 100
+  public void setHungerLevel() {
     Random rand = new Random();
     int randNum = 1 + rand.nextInt(100);
 
     this.hungerLevel = randNum;
   }
 
-  public void setHunger(int level) {
-
+  // Adds the passed in number to the animal's hunger level.
+  // If the animal's hunger level is above 100, print out that it is full and set hungerLevel to 100
+  public void setHungerLevel(int level) {
     if (this.hungerLevel + level > 100) {
       System.out.println(this.getName() + " is feeling full!");
       this.hungerLevel = 100;

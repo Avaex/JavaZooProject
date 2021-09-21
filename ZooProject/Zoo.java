@@ -25,7 +25,7 @@ public class Zoo {
     }
 
     public void createAardvarkExhibit() {
-        // Use this method to create a few Aardvark objects for the exhibit
+        // Use this method to create Aardvark objects for the exhibit
         Aardvark arthur = new Aardvark("Aardvark", "Arthur Read", 8, "ants");
         Aardvark DW = new Aardvark("Aardvark", "D.W. Read", 6, "ants");
         Aardvark kate = new Aardvark("Aardvark", "Kate Read", 2, "termites");
@@ -46,6 +46,7 @@ public class Zoo {
     }
 
     public void createBatExhibit() {
+        // Create all Bat objects for the exhibit
         Bat batty = new Bat("Bat", "Batty", 3, 1);
         Bat shadow = new Bat("Bat", "Shadow", 7, 2);
         Bat berty = new Bat("Bat", "Berty", 10, 2);
@@ -70,6 +71,7 @@ public class Zoo {
     }
 
     public void createBearExhibit() {
+        // Create Bear objects for the exhibit
         Bear smokey = new Bear("Bear", "Smokey", 35, "Black", "Brown");
         Bear misha = new Bear("Bear", "Misha", 10, "Polar", "White");
         Bear grizzly399 = new Bear("Bear", "Grizzly 399", 24, "Grizzly", "Brown");
@@ -86,13 +88,16 @@ public class Zoo {
     }
 
     public void createTurtleExhibit() {
+        // Create turtle objects for the exhibit
         Turtle franklin = new Turtle("Turtle", "Franklin", 6, "small");
         Turtle squirt = new Turtle("Turtle", "Squirt", 5, "small");
         Turtle crush = new Turtle("Turtle", "Crush", 100, "large");
         Turtle koopa = new Turtle("Turtle", "Koopa", 36, "medium");
 
+        // Add a Turtle to the animalTypes list
         animalTypes.add(franklin);
 
+        // Add all Turtles to the turtles list
         turtles.add(franklin);
         turtles.add(squirt);
         turtles.add(crush);
@@ -100,10 +105,13 @@ public class Zoo {
     }
 
     public void tourAardvarks() {
+        // Tours the aardvark exhibit
+        // Stay in this exhibit until the user wants to leave
         
         System.out.println("Hello and welcome to the Aardvark exhibit!");
         System.out.println();
 
+        // Makes sure there are actually aardvark objects in the exhibit
         if (aardvarks.isEmpty()) {
             System.out.println("Something went wrong. No aardvark objects created. Exiting.");
             System.exit(-1);
@@ -127,9 +135,13 @@ public class Zoo {
                 // If the animal prefers another type of food, skip that animal and go to the next
                 System.out.println("Let's feed the aardvarks!");
 
+                // Food choice is chosen at random
                 int foodChoice = 1 + rand.nextInt(2);
+
+                // Food choice == 1 means the aardvarks are fed ants
                 if (foodChoice == 1) {
                     System.out.println("Feeding the aardvarks ants!");
+                // Food choice == 2 means the aardvarks are fed termites
                 } else {
                     System.out.println("Feeding the aardvarks termites!");
                 }
@@ -143,6 +155,7 @@ public class Zoo {
                         } else {
                             System.out.println(a.getName() + " does not like ants!");
                         }
+                    // Food choice is termites, check to see if this aardvark likes termites
                     } else if (foodChoice == 2) {
                         if (a.getFoodPreferenec().equals("termites")) {
                             System.out.println(a.getName() + " likes termites!");
@@ -158,6 +171,8 @@ public class Zoo {
             } else if (userChoice.equals("4")) {
                 System.out.println("Aardvark facts: ");
                 System.out.println();
+                
+                // Fact is randomly chosen
                 int randNum = 1 + rand.nextInt(3);
                 if (randNum == 1) {
                     System.out.println("Aardvarks are solitary animals and only come together to mate.");
@@ -238,7 +253,8 @@ public class Zoo {
             System.out.println("1. Meet the bears");
             System.out.println("2. Attempt to talk to the bears");
             System.out.println("3. Hear a bear fact");
-            System.out.println("4. Leave the exhibit");
+            System.out.println("4. Attempt to feed the bears");
+            System.out.println("5. Leave the exhibit");
 
             String userChoice = sc.nextLine();
 
@@ -259,6 +275,12 @@ public class Zoo {
                     System.out.println("Bears have non-retractable claws like dogs and unlike cats.");
                 }
             } else if (userChoice.equals("4")) {
+                for (Bear b : bears) {
+                    System.out.println();
+                    System.out.println("Feeding " + b.getName() + " some food!");
+                    b.setHunger(20);
+                }
+            } else if (userChoice.equals("5")) {
                 System.out.println("Leaving the exhibit");
                 break;
             } else {
@@ -332,6 +354,7 @@ public class Zoo {
             System.out.println("First, let's look at bat box 1: ");
             for (Bat b : bats) {
                 if (b.getBatBoxNum() == 1) {
+                    System.out.println();
                     System.out.println("Name: " + b.getName());
                     System.out.println("Age: " + b.getAge());
                 }
@@ -341,6 +364,7 @@ public class Zoo {
             System.out.println("Now let's look at bat box 2");
             for (Bat b : bats) {
                 if (b.getBatBoxNum() == 2) {
+                    System.out.println();
                     System.out.println("Name: " + b.getName());
                     System.out.println("Age: " + b.getAge());
                 }
@@ -348,6 +372,7 @@ public class Zoo {
         } else if (exhibitNum == 3) { // exhibitNum == 3 is for bears
             System.out.println("Let's meet the bears!");
             for (Bear b : bears) {
+                System.out.println();
                 System.out.println("Name: " + b.getName());
                 System.out.println("Age: " + b.getAge());
                 System.out.println("Type: " + b.getType());
@@ -356,6 +381,7 @@ public class Zoo {
         } else if (exhibitNum == 4) { // exhibitNum == 4 is for turtles
             System.out.println("Let's meet the turtles!");
             for (Turtle t : turtles) {
+                System.out.println();
                 System.out.println("Name: " + t.getName());
                 System.out.println("Age: " + t.getAge());
                 System.out.println("Shell size: " + t.getShellSize());
@@ -366,6 +392,9 @@ public class Zoo {
     }
 
     public void talkAnimals(int exhibitNum) {
+
+        // When attempting to speak with the animals, each animal has a 1/10 chance of saying something back.
+        // The animal talks back using the call() method
 
         if (exhibitNum == 1) {
             System.out.println("Let's talk to the aardvarks!");

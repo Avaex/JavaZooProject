@@ -8,6 +8,7 @@ public class Aardvark extends Animal {
     setFoodPreference(food);
   }
 
+  // Aardvarks have food preferences of either ants or termites
   public void setFoodPreference(String food) {
     this.foodPreference = food;
   }

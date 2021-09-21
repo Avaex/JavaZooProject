@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ZooProject {
 
   static Zoo zoo;
-  
+
   public static void main(String args[]) {
 
     zoo = new Zoo();
@@ -48,6 +48,7 @@ public class ZooProject {
     System.out.println("Welcome to the guided tour for the zoo!");
     System.out.println("We will be visiting all exhibits in alphebetcal order. Let's go!");
 
+    // Visit each exhibit in our guided tour in alphabetical order
     visitAardvarks();
     visitBats();
     visitBears();
@@ -55,6 +56,8 @@ public class ZooProject {
   }
 
   public static void visitExhibit(int exhibitNum) {
+    // Allow the user to choose which exhibit to go to
+    
     System.out.println();
     System.out.println("---------------------------------------------");
     System.out.println("You have chosen exhibit number " + exhibitNum);
@@ -88,6 +91,7 @@ public class ZooProject {
   }
 
   public static void visitBats() {
+    System.out.println();
     System.out.println("    =/\\                 /\\=");
     System.out.println("    / \\'._   (\\_/)   _.'/ \\");
     System.out.println("   / .''._'--(o.o)--'_.''. \\");
@@ -101,6 +105,7 @@ public class ZooProject {
   }
 
   public static void visitBears() {
+    System.out.println();
     System.out.println(" __         __");
     System.out.println("/  \\.-\"\"\"-./  \\");
     System.out.println("\\    -   -    /");
@@ -108,18 +113,20 @@ public class ZooProject {
     System.out.println(" \\  .-'''-.  /");
     System.out.println("  '-\\__Y__/-'");
     System.out.println("     `---`");
+    System.out.println();
 
     zoo.tourBears();
   }
 
   public static void visitTurtles() {
+    System.out.println();
     System.out.println("                    __");
     System.out.println("         .,-;-;-,. /'_\\");
     System.out.println("       _/_/_/_|_\\_\\) /");
     System.out.println("     '-<_><_><_><_>=/\\");
     System.out.println("       `/_/====/_/-'\\_\\");
     System.out.println("        \"\"     \"\"    \"\"");
-    System.out.println("");
+    System.out.println();
 
     zoo.tourTurtles();
   }

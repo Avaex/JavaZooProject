@@ -8,6 +8,7 @@ public class Bat extends Animal {
     setBatBoxNum(batBoxNum);
   }
 
+  // All bats live in one of two bat boxes: BatBox1 or BatBox2
   public void setBatBoxNum(int batBoxNum) {
     this.batBoxNum = batBoxNum;
   }
