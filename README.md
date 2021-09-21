@@ -1,4 +1,4 @@
-# Object Oriented Programming (OOP) Java Zoo Project
+# Java Object Oriented Programming (OOP) Zoo Project
 This project is a simple text-based game designed to showcase the basic Object Oriented Programming (OOP) concepts of Java. This project uses and demonstrates 
 the four fundamental concepts of Object Oriented Programming: inheritance, encapsulation, abstraction, and polymorphism.
 
