@@ -32,12 +32,12 @@ public class Bear extends Animal {
     // Bears have a unique setHunger method. This method overrides the parent class in order to allow bears to eat more before feeling full.
     // A bear's hunger level must be 150 to feel full, rather than 100 like the other animals.
     @Override
-    public void setHunger(int level) {
-        if (super.getHunger() + level > 150) {
+    public void setHungerLevel(int level) {
+        if (super.getHungerLevel() + level > 150) {
             System.out.println(super.getName() + " is feeling full!");
-            super.setHunger(100);
+            super.setHungerLevel(100);
         } else {
-            super.setHunger(super.getHungerLevel() + level);
+            super.setHungerLevel(super.getHungerLevel() + level);
         }
     }
 

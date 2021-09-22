@@ -151,7 +151,7 @@ public class Zoo {
                     if (foodChoice == 1) {
                         if (a.getFoodPreferenec().equals("ants")) {
                             System.out.println(a.getName() + " likes the ants!");
-                            a.setHunger(15);
+                            a.setHungerLevel(15);
                         } else {
                             System.out.println(a.getName() + " does not like ants!");
                         }
@@ -159,7 +159,7 @@ public class Zoo {
                     } else if (foodChoice == 2) {
                         if (a.getFoodPreferenec().equals("termites")) {
                             System.out.println(a.getName() + " likes termites!");
-                            a.setHunger(15);
+                            a.setHungerLevel(15);
                         } else {
                             System.out.println(a.getName() + " does not like termites!");
                         }
@@ -278,7 +278,7 @@ public class Zoo {
                 for (Bear b : bears) {
                     System.out.println();
                     System.out.println("Feeding " + b.getName() + " some food!");
-                    b.setHunger(20);
+                    b.setHungerLevel(20);
                 }
             } else if (userChoice.equals("5")) {
                 System.out.println("Leaving the exhibit");
